@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import { Button } from "../button/button.component";
@@ -19,8 +19,6 @@ const SignUpForm = () => {
 
 	const [invalidPassword, setInvalidPassword] = useState(false);
 
-	//console.log(formFields);
-
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -36,7 +34,6 @@ const SignUpForm = () => {
             await createUserDocumentFromAuth(user, {displayName});
             setFormFields(defaultFormFields);
             alert("User created with success.")
-            console.log(user);
         } catch(error){
             console.log('Error encoutered creating user', error.message);
         }	
