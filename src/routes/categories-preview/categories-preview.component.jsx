@@ -8,7 +8,6 @@ import { selectCategoriesMap, selectCategoriesIsLoading } from '../../store/cate
 const CategoriesPreview = () => {
     const categoriesMap  = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectCategoriesIsLoading)
-    console.log(isLoading)
     return (
         <>
             { isLoading ? (<Spinner/>) : 
