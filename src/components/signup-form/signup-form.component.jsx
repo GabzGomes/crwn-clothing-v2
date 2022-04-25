@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useDispatch } from 'react-redux';
 import { signUpStart } from "../../store/user/user.action";
-import { Button } from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { FormInput } from "../form-input/form-input.component";
 
 import './signup-form.styles.scss';
@@ -83,7 +83,7 @@ const SignUpForm = () => {
 					value={confirmPassword}
 					onChange={handleChanges}
 					required/>
-				<Button type="submit">Sign Up</Button>
+				<Button type="submit" buttonType={BUTTON_TYPE_CLASSES.base}>Sign Up</Button>
 				{invalidPassword ? (
 					<span>Passwords do not match with password</span>
 				) : null}
