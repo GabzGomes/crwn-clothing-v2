@@ -2,7 +2,7 @@ Crown Clothing is a simple e-commerce app developed using React, Redux, Firebase
 
 Containing the flow of an e-commerce app from adding items to cart to simulating a card transition with Netlify.
 
-Follow below the step-by-step to run the application ( which is easy-pessy btw ):
+Follow below the step-by-step to run the application ( which is easy-peasy btw ):
 
   - Make sure you have Node v16+ installed
   
