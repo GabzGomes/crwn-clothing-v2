@@ -12,6 +12,8 @@ const Checkout = () => {
     const cartItems = useSelector(selectCartItems);
     const totalAmount = useSelector(selectCartTotal);
 
+    console.log(cartItems)
+
     return (
         <div className='checkout-container'>
             <div className='checkout-header'>
@@ -31,13 +33,21 @@ const Checkout = () => {
                     <span>Remove</span>
                 </div>
             </div>
-            {cartItems.map((cartItem)=>{
-            return(
-                <CheckoutItem key={cartItem.id} item={cartItem}/>
-            )
-            })}
-            <span className='total'>Total : ${totalAmount}</span>
-            <PaymentForm />
+            { 
+                !cartItems.length ? 
+                (<span>Your cart is empty.</span>) :
+                (
+                    <>
+                        { cartItems.map((cartItem)=>{
+                            return(
+                                <CheckoutItem key={cartItem.id} item={cartItem}/>
+                            )
+                        })}
+                        <span className='total'>Total : ${totalAmount}</span>
+                        <PaymentForm />
+                    </>
+                )           
+            }
         </div>
     );
 }
